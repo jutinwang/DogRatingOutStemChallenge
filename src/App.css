@@ -15,3 +15,12 @@
   align-items: center;
   justify-content: center;
 }
+
+table{
+  width: 100%
+}
+
+td, th{
+  border: 1px solid #cccccc;
+  padding: 8px;
+}
