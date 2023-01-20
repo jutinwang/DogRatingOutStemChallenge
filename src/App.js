@@ -36,7 +36,6 @@ function App() {
     dogViewed.push([data.message, rating])
 
     console.log(dogViewed)
-    createTable();
   }
 
   const [breedChosen, getBreeds] = useState(0);
@@ -58,7 +57,6 @@ function App() {
     }
     
     getBreeds(manipulateList.value);
-    // console.log(manipulateList.value);
   }
   
 
@@ -91,35 +89,44 @@ function App() {
   }
 
   function createTable() {
-    //Create a the Table.
-    var tableFrame = document.createElement("initialTable");
-    tableFrame.border = "1";
-    var row = tableFrame.insertRow(-1);
+    //Create a HTML Table element.
+    var tableIntital = document.createElement("TABLE");
+    tableIntital.border = "1";
+    var row = tableIntital.insertRow(-1);
 
-    //2 Columns so create variable for it (can be changed for dynamic lists)
+    //Get the count of columns.
     var columnCount = 2;
 
-    //Create the header row.
+    //Add the header row.
     for (var x = 0; x < columnCount; x++) {
         var headerCell = document.createElement("TH");
         headerCell.innerHTML = dogViewed[0][x];
         row.appendChild(headerCell);
     }
 
-    //Add the information.
+    //Add the data rows.
     for (var x = 1; x < dogViewed.length; x++) {
-        row = tableFrame.insertRow(-1);
+        row = tableIntital.insertRow(-1);
         for (var y = 0; y < columnCount; y++) {
-            var informationCell = row.insertCell(-1);
-            informationCell.innerHTML = dogViewed[x][y];
+            var cell = row.insertCell(-1);
+            cell.innerHTML = dogViewed[x][y];
         }
     }
 
-    //append to table that already exists
-    var finalTable = document.getElementById("Previous");
-    finalTable.innerHTML = "";
-    finalTable.appendChild(tableFrame);
-}
+    var dvTable = document.getElementById("Previous");
+    dvTable.innerHTML = "";
+    dvTable.appendChild(tableIntital);
+  }
+
+  function sortSmallFirst(){
+    dogViewed = dogViewed.sort((a, b) => a[1] - b[1]);
+    createTable();
+  }
+
+  function sortLargeFirst(){
+    dogViewed = dogViewed.sort((a, b) => b[1] - a[1]);
+    createTable();
+  }
 
   //Render onto React
   return (
@@ -146,9 +153,18 @@ function App() {
       <div className='button'>
         <button onClick={fetchDogLink}>Click for New Dog</button>
       </div>
+      <div className = 'createList'>
+        <button onClick={createTable}>View List</button>
+        <button onClick={sortSmallFirst}>Test Sort</button>
+        <button onClick={sortLargeFirst}>Test Sort 2</button>
+      </div>
 
       <table id = "Previous">
-      </table>
+         <thead>
+         <tr>
+         </tr>
+         </thead>
+       </table>
 
 
     </div>
