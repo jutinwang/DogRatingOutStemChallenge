@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/DogRatingOutStemChallenge/static/css/main.84ba762a.css",
+    "main.js": "/DogRatingOutStemChallenge/static/js/main.76312a16.js",
+    "static/js/787.90b8f2c9.chunk.js": "/DogRatingOutStemChallenge/static/js/787.90b8f2c9.chunk.js",
+    "index.html": "/DogRatingOutStemChallenge/index.html",
+    "main.84ba762a.css.map": "/DogRatingOutStemChallenge/static/css/main.84ba762a.css.map",
+    "main.76312a16.js.map": "/DogRatingOutStemChallenge/static/js/main.76312a16.js.map",
+    "787.90b8f2c9.chunk.js.map": "/DogRatingOutStemChallenge/static/js/787.90b8f2c9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.84ba762a.css",
+    "static/js/main.76312a16.js"
+  ]
+}
