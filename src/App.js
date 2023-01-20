@@ -14,8 +14,15 @@ function App() {
   const [dogImage, setDogData] = useState({});
   
   useEffect(() => {
-    fetchDogLink();
+    initialShowing();
   }, []);
+
+  async function initialShowing(){
+    let response = null;
+    response = await fetch(randomDogLink);
+    var data = await response.json();
+    setDogData(data);
+  }
 
   const fetchDogLink = async() =>{
     let response = null;
@@ -29,11 +36,11 @@ function App() {
     var data = await response.json();
     var manipulateList = document.getElementById("breeds")
 
+    dogViewed.push([dogImage.message, rating])
+
     setDogData(data);
     setRating(10);
     getBreeds(manipulateList.value)
-
-    dogViewed.push([data.message, rating])
 
     console.log(dogViewed)
   }
