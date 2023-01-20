@@ -109,7 +109,11 @@ function App() {
         row = tableIntital.insertRow(-1);
         for (var y = 0; y < columnCount; y++) {
             var cell = row.insertCell(-1);
-            cell.innerHTML = dogViewed[x][y];
+            if (dogViewed[x][y].length > 2){
+              cell.innerHTML = `<img src = ${dogViewed[x][y]}></img>`
+            }else{
+              cell.innerHTML = dogViewed[x][y];
+            }
         }
     }
 
@@ -131,7 +135,9 @@ function App() {
   //Render onto React
   return (
     <div className="App">
-      <h1>Rate My Dog!</h1>
+      <div className="Title">
+        <h1>Rate My Dog!</h1>
+      </div>
       <div className='DogImageFrame'>
         <img className='DogImage' src={dogImage.message}></img>
       </div>
@@ -149,14 +155,14 @@ function App() {
         onPointerMove={onPointerMove} 
       />
 
-      <p>{rating} / 10</p>
+      <p className = "Rating">Current Dog Rating: {rating} / 10</p>
       <div className='button'>
-        <button onClick={fetchDogLink}>Click for New Dog</button>
+        <button className = "newDog" onClick={fetchDogLink}>Click for New Dog</button>
       </div>
       <div className = 'createList'>
-        <button onClick={createTable}>View List</button>
-        <button onClick={sortSmallFirst}>Test Sort</button>
-        <button onClick={sortLargeFirst}>Test Sort 2</button>
+        <button class = "viewList" onClick={createTable}>View List</button>
+        <button class = "viewList" onClick={sortSmallFirst}>Sort: Smallest to Largest</button>
+        <button class = "viewList" onClick={sortLargeFirst}>Sort: Largest to Smallest</button>
       </div>
 
       <table id = "Previous">
