@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/DogRatingOutStemChallenge/static/css/main.84ba762a.css",
-    "main.js": "/DogRatingOutStemChallenge/static/js/main.c0c5aada.js",
+    "main.css": "/DogRatingOutStemChallenge/static/css/main.df2c030b.css",
+    "main.js": "/DogRatingOutStemChallenge/static/js/main.f6c7a976.js",
     "static/js/787.90b8f2c9.chunk.js": "/DogRatingOutStemChallenge/static/js/787.90b8f2c9.chunk.js",
     "index.html": "/DogRatingOutStemChallenge/index.html",
-    "main.84ba762a.css.map": "/DogRatingOutStemChallenge/static/css/main.84ba762a.css.map",
-    "main.c0c5aada.js.map": "/DogRatingOutStemChallenge/static/js/main.c0c5aada.js.map",
+    "main.df2c030b.css.map": "/DogRatingOutStemChallenge/static/css/main.df2c030b.css.map",
+    "main.f6c7a976.js.map": "/DogRatingOutStemChallenge/static/js/main.f6c7a976.js.map",
     "787.90b8f2c9.chunk.js.map": "/DogRatingOutStemChallenge/static/js/787.90b8f2c9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.84ba762a.css",
-    "static/js/main.c0c5aada.js"
+    "static/css/main.df2c030b.css",
+    "static/js/main.f6c7a976.js"
   ]
 }
